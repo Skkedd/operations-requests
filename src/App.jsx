@@ -3,9 +3,13 @@ import {
   ClipboardList,
   Clock3,
   Layers3,
-  ShieldCheck,
   Wrench,
+  CheckCircle2,
+  Inbox,
+  CalendarClock,
 } from 'lucide-react'
+import PlatformReturnPill from './components/PlatformReturnPill'
+import './App.css'
 
 const queueItems = [
   {
@@ -48,21 +52,45 @@ const stats = [
   },
 ]
 
+const meetingSummary = [
+  {
+    label: 'New Since Last Review',
+    value: '6',
+    icon: Inbox,
+  },
+  {
+    label: 'Completed Since Last Review',
+    value: '9',
+    icon: CheckCircle2,
+  },
+  {
+    label: 'Currently Open',
+    value: '18',
+    icon: ClipboardList,
+  },
+  {
+    label: 'Last Reviewed',
+    value: 'May 20',
+    icon: CalendarClock,
+  },
+]
+
 export default function App() {
   return (
     <main className="app-shell">
       <div className="background-glow" />
+
+      <PlatformReturnPill
+        onSignOut={() => {
+          window.location.href = 'https://app.deepsitecontrol.com'
+        }}
+      />
 
       <header className="topbar">
         <div>
           <p className="eyebrow">Operations Requests</p>
           <h1>Operational workflow and request management</h1>
         </div>
-
-        <button className="launcher-button">
-          <ShieldCheck size={18} />
-          Return to Platform
-        </button>
       </header>
 
       <section className="hero-card">
@@ -112,6 +140,38 @@ export default function App() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="meeting-summary-panel">
+        <div className="panel-header">
+          <div>
+            <p className="panel-label">Meeting Summary</p>
+            <h3>Maintenance Review Snapshot</h3>
+          </div>
+
+          <button className="panel-action">
+            Copy Summary
+            <ArrowUpRight size={16} />
+          </button>
+        </div>
+
+        <div className="meeting-summary-grid">
+          {meetingSummary.map((item) => {
+            const Icon = item.icon
+
+            return (
+              <article className="meeting-summary-card" key={item.label}>
+                <div className="stat-icon">
+                  <Icon size={18} />
+                </div>
+
+                <strong>{item.value}</strong>
+
+                <span>{item.label}</span>
+              </article>
+            )
+          })}
         </div>
       </section>
 
