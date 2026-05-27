@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: #091018;
+  color: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top left, rgba(72, 153, 255, 0.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0, 191, 255, 0.08), transparent 32%),
+    #091018;
+}
+
+.background-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.02),
+      transparent
+    );
+}
+
+.topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 1380px;
+  margin: 0 auto 24px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #7fb9ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 700px;
+  margin-bottom: 0;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.hero-card,
+.panel,
+.stat-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+.hero-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 28px;
+  max-width: 1380px;
+  margin: 0 auto 20px;
+  padding: 30px;
+  border-radius: 32px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgba(72, 153, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(72, 153, 255, 0.12);
+  color: #9fd0ff;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.hero-copy h2 {
+  max-width: 700px;
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.hero-copy p {
+  max-width: 620px;
+  color: #c2d2e4;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primary-button,
+.secondary-button,
+.launcher-button,
+.panel-action,
+.queue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 16px;
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    background 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.primary-button {
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #2d8cff, #59b1ff);
+  color: #04111f;
+  font-weight: 800;
+}
+
+.secondary-button,
+.launcher-button,
+.panel-action,
+.queue-button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f4f7fb;
+}
+
+.secondary-button,
+.launcher-button {
+  padding: 14px 18px;
+}
+
+.panel-action,
+.queue-button {
+  padding: 10px 14px;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.launcher-button:hover,
+.panel-action:hover,
+.queue-button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-status-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 14px;
+  border: 1px solid rgba(72, 153, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(72, 153, 255, 0.12);
+  color: #9fd0ff;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #56b3ff;
+  box-shadow: 0 0 16px rgba(86, 179, 255, 0.9);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  display: grid;
+  gap: 10px;
+  min-height: 130px;
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(72, 153, 255, 0.14);
+  color: #9fd0ff;
+}
+
+.stat-card strong {
+  font-size: 2rem;
+}
+
+.stat-card span {
+  color: #b8c9db;
+}
+
+.content-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr 0.8fr;
+  gap: 20px;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.panel {
+  padding: 24px;
+  border-radius: 30px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.panel-label {
+  margin-bottom: 8px;
+  color: #7fb9ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.panel-header h3 {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.queue-list {
+  display: grid;
+  gap: 14px;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.queue-item strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.queue-item span {
+  color: #b8c9db;
+}
+
+.module-checklist {
+  display: grid;
+  gap: 16px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d5dfeb;
+}
+
+.check-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.check-dot.complete {
+  background: #58b6ff;
+  box-shadow: 0 0 16px rgba(88, 182, 255, 0.8);
+}
+
+.check-dot.active {
+  background: #87d2ff;
+}
+
+@media (max-width: 1100px) {
+  .hero-card,
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .topbar {
+    flex-direction: column;
+  }
+
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .launcher-button {
+    width: 100%;
+  }
+
+  .queue-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .queue-button {
+    width: 100%;
+  }
+}
