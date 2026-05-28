@@ -10,6 +10,8 @@ import {
 } from 'lucide-react'
 import PlatformReturnPill from './components/PlatformReturnPill'
 import './App.css'
+import { useEffect } from "react";
+import { supabase } from "./lib/supabaseClient";
 
 const queueItems = [
   {
@@ -76,12 +78,31 @@ const meetingSummary = [
 ]
 
 export default function App() {
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data, error } = await supabase.auth.getSession();
+
+      if (error) {
+        console.error("Requests auth error:", error);
+      }
+
+      if (!data.session) {
+        window.location.href = "https://app.deepsitecontrol.com";
+        return;
+      }
+    };
+
+    checkSession();
+  }, []);
+
   return (
     <main className="app-shell">
       <div className="background-glow" />
 
       <PlatformReturnPill
-        onSignOut={() => {
+        onSignOut={async () => {
+          await supabase.auth.signOut()
           window.location.href = 'https://app.deepsitecontrol.com'
         }}
       />
