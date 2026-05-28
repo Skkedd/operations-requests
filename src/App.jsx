@@ -101,8 +101,7 @@ export default function App() {
       <div className="background-glow" />
 
       <PlatformReturnPill
-        onSignOut={async () => {
-          await supabase.auth.signOut()
+        onSignOut={() => {
           window.location.href = 'https://app.deepsitecontrol.com'
         }}
       />
