@@ -80,9 +80,26 @@ const meetingSummary = [
 export default function App() {
 
   useEffect(() => {
-    console.warn(
-      "Platform auth gate temporarily disabled while shared session handoff is unfinished."
-    );
+    const checkSession = async () => {
+      const { data, error } = await supabase.auth.getSession();
+
+      if (error) {
+        console.error('Requests auth error:', error);
+      }
+
+      console.log('Requests session check:', {
+        session: data.session,
+        supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
+      });
+
+      if (!data.session) {
+        window.location.href =
+          'https://app.deepsitecontrol.com/login?redirect=/requests';
+        return;
+      }
+    };
+
+    checkSession();
   }, []);
 
   function handleSignOut() {
