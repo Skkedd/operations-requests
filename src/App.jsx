@@ -85,15 +85,15 @@ export default function App() {
     );
   }, []);
 
+  function handleSignOut() {
+    window.location.href = 'https://app.deepsitecontrol.com/logout'
+  }
+
   return (
     <main className="app-shell">
       <div className="background-glow" />
 
-      <PlatformReturnPill
-        onSignOut={() => {
-          window.location.href = 'https://app.deepsitecontrol.com'
-        }}
-      />
+      <PlatformReturnPill onSignOut={handleSignOut} />
 
       <header className="topbar">
         <div>
