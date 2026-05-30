@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 import PlatformReturnPill from './components/PlatformReturnPill'
 import './App.css'
-import { useEffect } from "react";
+import { useEffect, useState } from 'react';
 import { supabase } from "./lib/supabaseClient";
 
 const queueItems = [
@@ -78,6 +78,7 @@ const meetingSummary = [
 ]
 
 export default function App() {
+  const [isAuthChecking, setIsAuthChecking] = useState(true)
 
   useEffect(() => {
     const checkSession = async () => {
@@ -97,10 +98,15 @@ export default function App() {
           'https://app.deepsitecontrol.com/login?redirect=/requests';
         return;
       }
+      setIsAuthChecking(false)
     };
 
     checkSession();
   }, []);
+
+    if (isAuthChecking) {
+    return null
+  }
 
   function handleSignOut() {
     window.location.href = 'https://app.deepsitecontrol.com/logout'
