@@ -1,50 +1,172 @@
 .platform-return-pill {
   position: fixed;
+
   top: 18px;
   right: 18px;
+
   z-index: 5000;
 
   display: flex;
-  gap: 10px;
+  align-items: center;
 
   padding: 10px;
 
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  border-radius: 18px;
+  border-radius: 28px;
 
-  background: rgba(8, 10, 18, 0.82);
-  backdrop-filter: blur(14px);
+  background:
+    rgba(8, 10, 18, 0.88);
+
+  backdrop-filter:
+    blur(18px);
+
+  border:
+    1px solid rgba(59, 130, 246, 0.42);
 
   box-shadow:
-    0 0 30px rgba(59, 130, 246, 0.22)
-    inset 0 0 0 1px rgba(59, 130, 246, 0.35);
+    0 0 40px rgba(59, 130, 246, 0.18);
+
+  transition:
+    width .28s ease,
+    padding .28s ease,
+    transform .18s ease;
+
+  overflow: hidden;
+}
+
+.platform-return-pill.open {
+  
+  width: auto;
+
+  justify-content: flex-end;
+
+}
+
+.platform-return-pill.collapsed {
+  width: 82px;
+
+  justify-content: center;
+}
+
+.platform-return-actions {
+  display: flex;
+
+  gap: 10px;
+
+  transition:
+    opacity .18s ease;
+}
+
+.platform-return-pill.collapsed
+.platform-return-actions {
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  width: 0;
+
+  overflow: hidden;
+}
+
+.platform-return-handle {
+
+  width: 60px;
+  height: 60px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  color:
+    white;
+
+  font-size:
+    28px;
+
+  cursor:
+    pointer;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 0 18px rgba(255,255,255,.22);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.platform-return-handle:hover {
+
+  transform:
+    scale(1.04);
+
+  box-shadow:
+    0 0 28px rgba(255,255,255,.55);
+
+}
+
+.platform-return-pill.open
+.platform-return-handle {
+
+  display: none;
+
 }
 
 .platform-return-button {
+
   border: none;
-  border-radius: 12px;
 
-  padding: 10px 16px;
+  border-radius: 18px;
 
-  background: rgba(255, 255, 255, 0.05);
+  min-width: 120px;
 
-  color: #f4f4f5;
-  font-size: 0.9rem;
-  font-weight: 600;
+  height: 60px;
 
-  cursor: pointer;
+  background:
+    rgba(255,255,255,.05);
+
+  color:
+    white;
+
+  font-size:
+    1rem;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
 
   transition:
-    background 0.18s ease,
-    transform 0.18s ease,
-    border-color 0.18s ease;
+    transform .18s ease,
+    background .18s ease;
 }
 
 .platform-return-button:hover {
-  background: rgba(59, 130, 246, 0.16);
-  transform: translateY(-1px);
+
+  transform:
+    translateY(-1px);
+
+  background:
+    rgba(59,130,246,.16);
+
 }
 
 .platform-return-button.signout:hover {
-  background: rgba(59, 130, 246, 0.16);
+
+  background:
+    rgba(59,130,246,.16);
+
+}
+
+.platform-return-pill.collapsed:hover {
+
+  box-shadow:
+    0 0 46px rgba(59,130,246,.30);
+
 }
