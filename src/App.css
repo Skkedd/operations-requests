@@ -1617,3 +1617,45 @@ h1 {
 .queue-page.density-comfortable .ticket-meta {
   font-size: 0.9rem;
 }
+
+/* Final Compact containment fix */
+.queue-page.density-compact .ticket-row {
+  min-height: 88px;
+  max-height: 96px;
+  padding: 8px 12px;
+  overflow: hidden;
+  grid-template-columns:
+    110px
+    minmax(330px, 2fr)
+    230px
+    200px
+    200px
+    150px;
+}
+
+.queue-page.density-compact .ticket-row > * {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.queue-page.density-compact .ticket-main strong,
+.queue-page.density-compact .ticket-body,
+.queue-page.density-compact .ticket-meta span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queue-page.density-compact .ticket-row select {
+  width: 100%;
+  min-width: 0;
+}
+
+.queue-page.density-compact .ticket-inline-actions {
+  overflow: hidden;
+}
+
+.queue-page.density-compact .ticket-inline-actions select,
+.queue-page.density-compact .ticket-inline-actions button {
+  min-width: 0;
+}
