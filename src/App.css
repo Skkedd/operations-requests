@@ -1566,3 +1566,54 @@ h1 {
   font-size: 0.6rem;
 }
 
+/* Final Comfortable cleanup */
+.queue-page.density-comfortable .ticket-row {
+  min-height: 118px;
+  max-height: 132px;
+  padding: 12px 16px;
+  overflow: hidden;
+  grid-template-columns:
+    130px
+    minmax(360px, 2fr)
+    260px
+    220px
+    220px
+    170px;
+}
+
+.queue-page.density-comfortable .ticket-row > * {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.queue-page.density-comfortable .ticket-id {
+  font-size: 22px;
+}
+
+.queue-page.density-comfortable .ticket-main strong {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.queue-page.density-comfortable .ticket-body {
+  font-size: 0.92rem;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queue-page.density-comfortable .ticket-inline-actions {
+  margin-top: 8px;
+}
+
+.queue-page.density-comfortable .ticket-inline-actions select,
+.queue-page.density-comfortable .ticket-inline-actions button {
+  height: 36px;
+  min-height: 36px;
+  font-size: 0.86rem;
+}
+
+.queue-page.density-comfortable .ticket-meta {
+  font-size: 0.9rem;
+}
