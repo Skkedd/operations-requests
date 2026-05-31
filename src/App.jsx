@@ -12,6 +12,16 @@ import SettingsPage from './pages/SettingsPage'
 export default function App() {
   const [view, setView] = useState('agent')
 
+  const [density, setDensityState] =
+    useState(() => {
+      return localStorage.getItem('requestsQueueDensity') || 'compact'
+    })
+
+  function setDensity(nextDensity) {
+    setDensityState(nextDensity)
+    localStorage.setItem('requestsQueueDensity', nextDensity)
+  }
+
   function renderView() {
     if (view === 'timeline') {
       return <ActivityTimeline />
@@ -26,10 +36,19 @@ export default function App() {
     }
 
     if (view === 'settings') {
-      return <SettingsPage />
+      return (
+        <SettingsPage
+          density={density}
+          setDensity={setDensity}
+        />
+      )
     }
 
-    return <AgentQueue />
+    return (
+      <AgentQueue
+        density={density}
+      />
+    )
   }
 
   return (
