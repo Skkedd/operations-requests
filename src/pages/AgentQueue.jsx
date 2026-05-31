@@ -21,12 +21,7 @@ export default function AgentQueue({ density }) {
   }
 
   return (
-    <main
-        className={[
-            'queue-page',
-            `density-${density}`,
-        ].join(' ')}
-    >
+    <main className={`queue-page density-${density}`}>
       <section className="queue-summary">
         <div className="summary-card">
           <span>Open</span>
@@ -50,13 +45,6 @@ export default function AgentQueue({ density }) {
       </section>
 
       <section className="queue-controls">
-        <div>
-          <button>10</button>
-          <button>25</button>
-          <button>50</button>
-          <button>100</button>
-        </div>
-
         <input placeholder="Search work orders..." />
       </section>
 
@@ -82,27 +70,49 @@ export default function AgentQueue({ density }) {
                   <div className="ticket-body">
                     {ticket.body}
                   </div>
+
+                  <div className="ticket-inline-actions">
+                    <select
+                      defaultValue={ticket.priority}
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      <option>Low</option>
+                      <option>Medium</option>
+                      <option>High</option>
+                      <option>Urgent</option>
+                    </select>
+
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation()
+                        toggleTicket(ticket.id)
+                      }}
+                    >
+                      {ticket.responded ? 'View' : 'Respond'}
+                    </button>
+                  </div>
                 </div>
 
                 <div className="ticket-meta">
-                    <span>{ticket.requester}</span>
-                    <span>{ticket.age}</span>
+                  <span>{ticket.requester}</span>
+                  <span>{ticket.age}</span>
 
-                    {!ticket.responded && (
-                        <span className="needs-response-badge">
-                            First Response Needed
-                        </span>
-                    )}
+                  {!ticket.responded && (
+                    <span className="needs-response-badge">
+                      First Response Needed
+                    </span>
+                  )}
                 </div>
 
                 <select
-                    defaultValue={ticket.site}
-                    onClick={(event) => event.stopPropagation()}
+                  defaultValue={ticket.site}
+                  onClick={(event) => event.stopPropagation()}
                 >
-                    <option>Wright Elementary</option>
-                    <option>JX Wilson</option>
-                    <option>RL Stevens</option>
-                    <option>District Office</option>
+                  <option>Wright Elementary</option>
+                  <option>JX Wilson</option>
+                  <option>RL Stevens</option>
+                  <option>District Office</option>
                 </select>
 
                 <select
@@ -123,26 +133,6 @@ export default function AgentQueue({ density }) {
                   <option>In Progress</option>
                   <option>Closed</option>
                 </select>
-
-                <select
-                    defaultValue={ticket.priority}
-                    onClick={(event) => event.stopPropagation()}
-                >
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Urgent</option>
-                </select>
-
-                <button
-                  type="button"
-                  onClick={(event) => {
-                    event.stopPropagation()
-                    toggleTicket(ticket.id)
-                  }}
-                >
-                  {ticket.responded ? 'View' : 'Respond'}
-                </button>
               </article>
 
               {isSelected && (
@@ -154,6 +144,14 @@ export default function AgentQueue({ density }) {
             </div>
           )
         })}
+      </section>
+
+      <section className="queue-pagination">
+        <span>Rows per page</span>
+        <button>10</button>
+        <button>25</button>
+        <button>50</button>
+        <button>100</button>
       </section>
     </main>
   )

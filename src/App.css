@@ -1453,3 +1453,116 @@ h1 {
 .queue-page.density-dense .ticket-row button {
   min-width: 72px;
 }
+
+.ticket-row {
+  grid-template-columns:
+    130px
+    minmax(360px, 2fr)
+    260px
+    220px
+    220px
+    170px;
+}
+
+.ticket-inline-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ticket-inline-actions select,
+.ticket-inline-actions button {
+  height: 38px;
+  min-height: 38px;
+  border-radius: 12px;
+}
+
+.ticket-inline-actions select {
+  width: 140px;
+}
+
+.ticket-inline-actions button {
+  width: 180px;
+}
+
+.density-compact .ticket-row {
+  min-height: 86px;
+  max-height: 96px;
+  padding: 8px 12px;
+  grid-template-columns:
+    110px
+    minmax(330px, 2fr)
+    230px
+    200px
+    200px
+    150px;
+}
+
+.density-compact .ticket-inline-actions {
+  margin-top: 6px;
+}
+
+.density-compact .ticket-inline-actions select,
+.density-compact .ticket-inline-actions button {
+  height: 32px;
+  min-height: 32px;
+  font-size: 0.78rem;
+}
+
+.density-dense .ticket-row {
+  min-height: 58px;
+  max-height: 66px;
+  padding: 6px 10px;
+  grid-template-columns:
+    90px
+    minmax(300px, 2fr)
+    200px
+    180px
+    180px
+    130px;
+}
+
+.density-dense .ticket-main strong {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.density-dense .ticket-body {
+  display: none;
+}
+
+.density-dense .ticket-inline-actions {
+  margin-top: 4px;
+  gap: 6px;
+}
+
+.density-dense .ticket-inline-actions select,
+.density-dense .ticket-inline-actions button {
+  height: 24px;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 0.66rem;
+}
+
+.density-dense .ticket-inline-actions select {
+  width: 92px;
+}
+
+.density-dense .ticket-inline-actions button {
+  width: 96px;
+}
+
+.density-dense .ticket-id {
+  font-size: 15px;
+}
+
+.density-dense .ticket-meta {
+  font-size: 0.78rem;
+}
+
+.density-dense .needs-response-badge {
+  padding: 2px 6px;
+  font-size: 0.6rem;
+}
+
