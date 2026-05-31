@@ -24,15 +24,18 @@ export default function App() {
 
   function renderView() {
     if (view === 'timeline') {
-      return <ActivityTimeline />
-    }
+      return <ActivityTimeline density={density} />    }
 
     if (view === 'approver') {
-      return <ApproverInbox />
-    }
+      return <ApproverInbox density={density} />    }
 
     if (view === 'requester') {
-      return <RequesterPortal />
+      return (
+        <RequesterPortal
+          density={density}
+          setDensity={setDensity}
+        />
+      )
     }
 
     if (view === 'settings') {

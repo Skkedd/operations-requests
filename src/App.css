@@ -1659,3 +1659,545 @@ h1 {
 .queue-page.density-compact .ticket-inline-actions button {
   min-width: 0;
 }
+
+.timeline-page {
+  padding: 40px;
+}
+
+.timeline-panel {
+  height: calc(100vh - 190px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+}
+
+.timeline-header {
+  padding: 34px 38px 28px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.timeline-header p {
+  color: #60a5fa;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.timeline-header h1 {
+  margin-top: 10px;
+  font-size: 3rem;
+}
+
+.timeline-header span {
+  display: block;
+  margin-top: 10px;
+  color: #8ea0b8;
+}
+
+.timeline-scroll-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 38px 34px;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 22px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.timeline-entry:last-child {
+  border-bottom: none;
+}
+
+.timeline-dot {
+  width: 13px;
+  height: 13px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #60a5fa;
+  box-shadow: 0 0 18px rgba(96,165,250,.45);
+}
+
+.timeline-dot.updated {
+  background: #22c55e;
+  box-shadow: 0 0 18px rgba(34,197,94,.4);
+}
+
+.timeline-dot.routed {
+  background: #a855f7;
+  box-shadow: 0 0 18px rgba(168,85,247,.4);
+}
+
+.timeline-dot.assigned {
+  background: #f59e0b;
+  box-shadow: 0 0 18px rgba(245,158,11,.4);
+}
+
+.timeline-entry-main strong {
+  font-size: 1.15rem;
+}
+
+.timeline-entry-main p {
+  margin-top: 8px;
+  color: #9db0c8;
+}
+
+.timeline-time {
+  color: #8ea0b8;
+  white-space: nowrap;
+}
+
+.approver-page {
+  padding: 40px;
+}
+
+.approver-header p {
+  color: #60a5fa;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.approver-header h1 {
+  margin-top: 8px;
+  font-size: 3rem;
+}
+
+.approver-header span {
+  color: #8ea0b8;
+}
+
+.approver-summary {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.approver-summary div {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.approver-summary span {
+  color: #8ea0b8;
+}
+
+.approver-summary strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 2.2rem;
+}
+
+.approver-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.approver-row {
+  display: grid;
+  grid-template-columns: 100px minmax(320px, 1fr) 220px 460px;
+  gap: 18px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.approver-id {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.approver-main strong {
+  font-size: 1.05rem;
+}
+
+.approver-main p {
+  margin-top: 6px;
+  color: #9db0c8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.approver-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #8ea0b8;
+}
+
+.approver-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.approver-actions button {
+  height: 38px;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 12px;
+  background: rgba(59,130,246,.12);
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Shared density support for Timeline and Approver pages */
+
+.density-compact .timeline-entry {
+  padding: 16px 0;
+}
+
+.density-compact .timeline-entry-main strong {
+  font-size: 1rem;
+}
+
+.density-compact .timeline-entry-main p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.density-dense .timeline-entry {
+  padding: 10px 0;
+}
+
+.density-dense .timeline-entry-main strong {
+  font-size: 0.88rem;
+}
+
+.density-dense .timeline-entry-main p {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.density-dense .timeline-time {
+  font-size: 0.76rem;
+}
+
+.density-compact .approver-row {
+  padding: 12px;
+}
+
+.density-compact .approver-main p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.density-compact .approver-actions button {
+  height: 34px;
+  font-size: 0.82rem;
+}
+
+.density-dense .approver-row {
+  padding: 8px 10px;
+  grid-template-columns: 80px minmax(260px, 1fr) 180px 390px;
+}
+
+.density-dense .approver-id {
+  font-size: 1rem;
+}
+
+.density-dense .approver-main strong {
+  font-size: 0.9rem;
+}
+
+.density-dense .approver-main p {
+  margin-top: 2px;
+  font-size: 0.78rem;
+}
+
+.density-dense .approver-meta {
+  font-size: 0.78rem;
+}
+
+.density-dense .approver-actions button {
+  height: 30px;
+  font-size: 0.72rem;
+  padding: 0 8px;
+}
+
+.requester-page {
+  padding: 40px;
+}
+
+.requester-header p {
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+.requester-header h1 {
+  margin-top: 8px;
+  font-size: 3rem;
+}
+
+.requester-header span {
+  color: #8ea0b8;
+}
+
+.requester-summary {
+  margin-top: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0,1fr)
+    );
+
+  gap: 16px;
+}
+
+.requester-summary div {
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .04
+    );
+
+}
+
+.requester-summary strong {
+
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 2rem;
+
+}
+
+.request-list {
+
+  margin-top: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+}
+
+.request-row {
+
+  display: grid;
+
+  grid-template-columns:
+    110px
+    minmax(
+      260px,
+      1fr
+    )
+    220px
+    180px;
+
+  gap: 18px;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .04
+    );
+
+}
+
+.request-main p {
+
+  margin-top: 6px;
+
+  color:
+    #8ea0b8;
+
+}
+
+.request-status {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.request-actions {
+
+  display: flex;
+
+  gap: 8px;
+
+}
+
+.request-actions button {
+
+  height: 38px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 0 14px;
+
+}
+
+/* density */
+
+.density-compact .request-row {
+
+  padding: 12px;
+
+}
+
+.density-dense .request-row {
+
+  padding: 8px;
+
+}
+
+.density-dense .request-main p {
+
+  display: none;
+
+}
+
+.density-dense .request-actions button {
+
+  height: 30px;
+
+  font-size: .75rem;
+
+}
+
+.requester-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.requester-controls {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.requester-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.requester-control label {
+  color: #8ea0b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.requester-control select {
+  height: 42px;
+  min-width: 170px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,.05);
+  color: white;
+}
+
+.density-compact .request-row {
+  padding: 12px;
+}
+
+.density-compact .request-main p {
+  margin-top: 4px;
+  font-size: 0.86rem;
+}
+
+.density-compact .request-actions button {
+  height: 34px;
+  font-size: 0.82rem;
+}
+
+.density-dense .request-row {
+  padding: 8px 10px;
+}
+
+.density-dense .request-main p {
+  display: none;
+}
+
+.density-dense .request-id {
+  font-size: 0.9rem;
+}
+
+.density-dense .request-status {
+  font-size: 0.78rem;
+}
+
+.density-dense .request-actions button {
+  height: 30px;
+  font-size: 0.72rem;
+  padding: 0 10px;
+}
+
+.requester-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 28px;
+}
+
+.requester-header > p,
+.requester-header > h1,
+.requester-header > span {
+  grid-column: 1;
+}
+
+.requester-controls {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.requester-control select {
+  background: #151c26;
+  color: #f4f7fb;
+}
+
+.requester-control select option {
+  background: #151c26;
+  color: #f4f7fb;
+}
