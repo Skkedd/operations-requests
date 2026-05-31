@@ -1317,8 +1317,8 @@ h1 {
 }
 
 .density-dense .ticket-row {
-  min-height: 38px;
-  max-height: 44px;
+  min-height: 58px;
+  max-height: 66px;
   overflow: hidden;
   padding: 4px 8px;
   grid-template-columns:
@@ -1329,6 +1329,24 @@ h1 {
     minmax(130px, 180px)
     minmax(100px, 130px)
     90px;
+}
+
+.density-dense .ticket-id {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.density-dense .ticket-main strong {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.density-dense .ticket-meta {
+  font-size: 0.9rem;
+}
+
+.density-dense .ticket-body {
+  font-size: 0.82rem;
 }
 
 .density-dense .ticket-row > * {
