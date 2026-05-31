@@ -1276,125 +1276,86 @@ h1 {
 
 }
 
-/* ---------------- */
-/* Comfortable */
-/* ---------------- */
-
-.density-comfortable .ticket-row {
-
-  padding:
-    22px;
-
+.ticket-main,
+.ticket-body,
+.ticket-main strong {
+  min-width: 0;
 }
 
-.density-comfortable .ticket-id {
-
-  font-size:
-    28px;
-
+.ticket-main strong,
+.ticket-body {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.density-comfortable .ticket-main strong {
-
-  font-size:
-    24px;
-
-}
-
-/* ---------------- */
-/* Compact */
-/* ---------------- */
-
+/* Better Compact */
 .density-compact .ticket-row {
-
-  padding:
-    14px;
-
+  min-height: 108px;
+  padding: 10px 12px;
+  grid-template-columns: 120px 2fr 230px 180px 180px 140px 100px;
 }
 
 .density-compact .ticket-id {
-
-  font-size:
-    22px;
-
+  font-size: 20px;
 }
 
 .density-compact .ticket-main strong {
-
-  font-size:
-    18px;
-
+  font-size: 17px;
 }
 
 .density-compact .ticket-body {
-
-  font-size:
-    .92rem;
-
+  font-size: 0.86rem;
+  margin-top: 6px;
 }
 
-.density-compact select,
-.density-compact button {
-
-  height:
-    44px;
-
+.density-compact .ticket-row select,
+.density-compact .ticket-row button {
+  height: 42px;
+  border-radius: 14px;
 }
 
-/* ---------------- */
-/* Dense */
-/* ---------------- */
-
+/* True Dense */
 .density-dense .ticket-row {
-
-  padding:
-    8px;
-
+  min-height: 64px;
+  padding: 6px 10px;
+  grid-template-columns: 92px 2.2fr 170px 150px 150px 120px 86px;
 }
 
 .density-dense .ticket-id {
-
-  font-size:
-    18px;
-
+  font-size: 15px;
 }
 
 .density-dense .ticket-main strong {
-
-  font-size:
-    15px;
-
+  font-size: 14px;
 }
 
 .density-dense .ticket-body {
-
-  font-size:
-    .8rem;
-
-}
-
-.density-dense select,
-.density-dense button {
-
-  height:
-    38px;
-
+  font-size: 0.74rem;
+  margin-top: 3px;
 }
 
 .density-dense .ticket-meta {
-
-  font-size:
-    .8rem;
-
+  gap: 2px;
+  font-size: 0.72rem;
 }
 
 .density-dense .needs-response-badge {
-
-  padding:
-    4px
-    8px;
-
-  font-size:
-    .7rem;
-
+  margin-top: 3px;
+  padding: 3px 7px;
+  font-size: 0.64rem;
 }
+
+.density-dense .ticket-row select,
+.density-dense .ticket-row button {
+  height: 32px;
+  min-height: 32px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+}
+
+.density-dense .ticket-row {
+  align-items: center;
+}
+
