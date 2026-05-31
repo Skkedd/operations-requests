@@ -21,7 +21,12 @@ export default function AgentQueue({ density }) {
   }
 
   return (
-    <main className={`queue-page density-${density}`}>
+    <main
+        className={[
+            'queue-page',
+            `density-${density}`,
+        ].join(' ')}
+    >
       <section className="queue-summary">
         <div className="summary-card">
           <span>Open</span>
