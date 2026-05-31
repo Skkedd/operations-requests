@@ -1359,3 +1359,40 @@ h1 {
   align-items: center;
 }
 
+.density-dense .ticket-row {
+  min-height: 42px;
+  padding: 4px 8px;
+  grid-template-columns: 100px minmax(300px, 2.5fr) 180px 230px 230px 160px 120px;
+}
+
+.density-dense .ticket-main strong {
+  max-width: 100%;
+}
+
+.density-dense .ticket-body {
+  display: none;
+}
+
+.density-dense .ticket-meta span:first-child {
+  display: none;
+}
+
+.density-dense .needs-response-badge {
+  margin-top: 0;
+}
+
+.density-dense .ticket-row select,
+.density-dense .ticket-row button {
+  height: 28px;
+  min-height: 28px;
+  padding: 0 10px;
+}
+
+.density-dense .ticket-id {
+  font-size: 14px;
+}
+
+.density-dense .ticket-main strong {
+  font-size: 14px;
+}
+
