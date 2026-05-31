@@ -1391,3 +1391,65 @@ h1 {
   font-size: 0.62rem;
   line-height: 1;
 }
+
+/* Final density override */
+.queue-page.density-compact .ticket-row {
+  min-height: 78px;
+  max-height: 86px;
+  padding: 6px 10px;
+}
+
+.queue-page.density-compact .ticket-id {
+  font-size: 18px;
+}
+
+.queue-page.density-compact .ticket-main strong {
+  font-size: 16px;
+}
+
+.queue-page.density-compact .ticket-body {
+  margin-top: 2px;
+  font-size: 0.8rem;
+}
+
+.queue-page.density-compact .ticket-meta {
+  font-size: 0.82rem;
+  gap: 2px;
+}
+
+.queue-page.density-compact .ticket-row select,
+.queue-page.density-compact .ticket-row button {
+  height: 34px;
+  min-height: 34px;
+  padding: 0 8px;
+  font-size: 0.82rem;
+}
+
+.queue-page.density-dense .ticket-row {
+  min-height: 58px;
+  max-height: 66px;
+}
+
+.queue-page.density-dense .ticket-id {
+  font-size: 14px;
+}
+
+.queue-page.density-dense .ticket-main strong {
+  font-size: 14px;
+}
+
+.queue-page.density-dense .ticket-row select,
+.queue-page.density-dense .ticket-row button {
+  min-width: 0;
+  width: 100%;
+  height: 32px;
+  min-height: 32px;
+  padding: 0 6px;
+  font-size: 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-page.density-dense .ticket-row button {
+  min-width: 72px;
+}
