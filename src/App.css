@@ -1292,9 +1292,9 @@ h1 {
 
 /* Better Compact */
 .density-compact .ticket-row {
-  min-height: 108px;
-  padding: 10px 12px;
-  grid-template-columns: 120px 2fr 230px 180px 180px 140px 100px;
+  min-height: 92px;
+  padding: 8px 12px;
+  grid-template-columns: 110px 2fr 220px 170px 170px 130px 105px;
 }
 
 .density-compact .ticket-id {
@@ -1302,18 +1302,20 @@ h1 {
 }
 
 .density-compact .ticket-main strong {
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 1.1;
 }
 
 .density-compact .ticket-body {
   font-size: 0.86rem;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .density-compact .ticket-row select,
 .density-compact .ticket-row button {
-  height: 42px;
-  border-radius: 14px;
+  height: 38px;
+  min-height: 38px;
+  border-radius: 12px;
 }
 
 .density-dense .ticket-row {
@@ -1328,7 +1330,7 @@ h1 {
     minmax(130px, 180px)
     minmax(130px, 180px)
     minmax(100px, 130px)
-    90px;
+    112px;
 }
 
 .density-dense .ticket-id {
@@ -1374,11 +1376,12 @@ h1 {
 .density-dense .ticket-row select,
 .density-dense .ticket-row button {
   width: 100%;
-  height: 28px;
-  min-height: 28px;
+  height: 30px;
+  min-height: 30px;
   padding: 0 8px;
   border-radius: 10px;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
+  white-space: nowrap;
 }
 
 .density-dense .needs-response-badge {
