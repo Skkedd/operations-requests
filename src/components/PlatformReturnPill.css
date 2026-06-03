@@ -170,3 +170,8 @@
     0 0 46px rgba(59,130,246,.30);
 
 }
+
+.platform-return-pill {
+  transform: scale(0.75);
+  transform-origin: top right;
+}
