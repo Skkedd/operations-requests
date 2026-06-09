@@ -1,8 +1,40 @@
 import { useEffect, useState } from 'react'
 import './PlatformReturnPill.css'
 
+const THEME_STORAGE_KEY = 'dsc-theme'
+
+function getInitialTheme() {
+  try {
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY)
+
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme
+    }
+  } catch {
+    // Local storage is convenience only.
+  }
+
+  return document.body.classList.contains('dsc-theme-light') ? 'light' : 'dark'
+}
+
+function applyTheme(theme) {
+  document.body.classList.remove('dsc-theme-light', 'dsc-theme-dark')
+  document.body.classList.add(`dsc-theme-${theme}`)
+
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, theme)
+  } catch {
+    // Local storage is convenience only.
+  }
+}
+
 export default function PlatformReturnPill({ onSignOut }) {
   const [isOpen, setIsOpen] = useState(true)
+  const [theme, setTheme] = useState(getInitialTheme)
+
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   useEffect(() => {
     const collapseTimer = setTimeout(() => {
@@ -18,6 +50,21 @@ export default function PlatformReturnPill({ onSignOut }) {
 
   function closePill() {
     setIsOpen(false)
+  }
+
+  function toggleTheme() {
+    setTheme((currentTheme) =>
+      currentTheme === 'dark' ? 'light' : 'dark',
+    )
+  }
+
+  async function handleSignOut() {
+    if (onSignOut) {
+      await onSignOut()
+      return
+    }
+
+    window.location.href = '/logout'
   }
 
   return (
@@ -40,6 +87,14 @@ export default function PlatformReturnPill({ onSignOut }) {
         <button
           type="button"
           className="platform-return-button"
+          onClick={toggleTheme}
+        >
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </button>
+
+        <button
+          type="button"
+          className="platform-return-button"
           onClick={() => {
             window.location.href = 'https://app.deepsitecontrol.com/launcher'
           }}
@@ -50,7 +105,7 @@ export default function PlatformReturnPill({ onSignOut }) {
         <button
           type="button"
           className="platform-return-button signout"
-          onClick={onSignOut}
+          onClick={handleSignOut}
         >
           Sign Out
         </button>
