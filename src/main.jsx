@@ -8,6 +8,6 @@ import { requestsManifest } from './fleetManifest.js'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FleetEntryGate client={supabase} moduleKey={requestsManifest.key}><App /></FleetEntryGate>
+    <FleetEntryGate client={supabase} assignmentMode={import.meta.env.VITE_BACKEND_AUTH_V2 === 'true' ? 'explicit' : 'compatibility'} moduleKey={requestsManifest.key}><App /></FleetEntryGate>
   </StrictMode>,
 )
