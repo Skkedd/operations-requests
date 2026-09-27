@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-import PlatformReturnPill from './components/PlatformReturnPill'
+
 
 import AgentQueue from './pages/AgentQueue'
 import ActivityTimeline from './pages/ActivityTimeline'
@@ -56,7 +56,7 @@ export default function App() {
 
   return (
     <>
-      <PlatformReturnPill />
+
 
       <div className="view-switcher">
 

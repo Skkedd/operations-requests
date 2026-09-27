@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react'
+import { PLATFORM_HOME } from '../foundation/navigation'
+import { signOutAndReturn } from '../foundation/session'
+import { supabase } from '../lib/supabaseClient'
 import './PlatformReturnPill.css'
 
 const THEME_STORAGE_KEY = 'dsc-theme'
@@ -64,7 +67,7 @@ export default function PlatformReturnPill({ onSignOut }) {
       return
     }
 
-    window.location.href = '/logout'
+    await signOutAndReturn(supabase)
   }
 
   return (
@@ -96,7 +99,7 @@ export default function PlatformReturnPill({ onSignOut }) {
           type="button"
           className="platform-return-button"
           onClick={() => {
-            window.location.href = 'https://app.deepsitecontrol.com/launcher'
+            window.location.href = PLATFORM_HOME
           }}
         >
           Launcher
