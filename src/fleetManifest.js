@@ -4,6 +4,7 @@ export const requestsManifest = defineModuleManifest({
   key: 'requests',
   name: 'Operations Requests',
   path: '/requests',
-  artifactTypes: ['request', 'work_order', 'approval'],
-  eventKinds: ['work_order.assigned', 'approval.required'],
+  // No source-owned persisted request IDs or authorization resolver yet.
+  artifactTypes: [],
+  eventKinds: [],
 })
